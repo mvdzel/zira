@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("0.1.2:1", "", "Diagram Metamodel RDZ", "EARoot/EA1/EA2/EA78.html", "175.png", "1", "0", "", "Logical diagram0","{11381B3A-C578-4435-8367-B5E027C49A91}");
+tocTab[tocTab.length] = new Array("0.1.2:2", "", "Diagram Metamodel Domein", "EARoot/EA1/EA2/EA80.html", "175.png", "2", "0", "", "Logical diagram0","{A4680C8F-5873-440a-B66D-DB7B3A5B3296}");
+tocTab[tocTab.length] = new Array("0.1.2:3", "", "«ArchiMate_Process» Naam bedrijfsactiviteit2", "EARoot/EA1/EA2/EA100.html", "B87AC469-C_ArchiMate_Process.png", "E352", "0", "", "Activity0","{B5AE0C48-68DF-4a17-AC61-A3902E87F36A}");
+tocTab[tocTab.length] = new Array("0.1.2:4", "", "«ArchiMate_Function» Naam bedrijfsfunctie", "EARoot/EA1/EA2/EA101.html", "B87AC469-C_ArchiMate_Function.png", "E351", "0", "", "Activity0","{9C5061C9-006A-42be-8E91-DB66C9D43DA5}");
+tocTab[tocTab.length] = new Array("0.1.2:5", "", "«ArchiMate_Process» Naam bedrijfsproces", "EARoot/EA1/EA2/EA102.html", "B87AC469-C_ArchiMate_Process.png", "E349", "0", "", "Activity0","{1D1A7248-C50B-465f-834B-4A5840701A87}");
+tocTab[tocTab.length] = new Array("0.1.2:6", "", "«ArchiMate_Grouping» Naam domein", "EARoot/EA1/EA2/EA103.html", "B87AC469-C_ArchiMate_Grouping.png", "E347", "0", "", "Component0","{5E5C0A19-4588-4d4c-B7ED-50CEFB2D6D96}");
+tocTab[tocTab.length] = new Array("0.1.2:7", "", "«ArchiMate_Process» Naam bedrijfsactiviteit", "EARoot/EA1/EA2/EA105.html", "B87AC469-C_ArchiMate_Process.png", "E350", "E347", "", "Activity0","{639BDBC6-FD48-4685-A1EF-905D381E9CAB}");
+tocTab[tocTab.length] = new Array("0.1.2:8", "", "«ArchiMate_Object» Naam informatieobject", "EARoot/EA1/EA2/EA106.html", "B87AC469-C_ArchiMate_Object.png", "E346", "E347", "", "Class0","{42B35633-2A8C-476c-B96E-4B404DF6D066}");
