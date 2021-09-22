@@ -1,6 +1,8 @@
 
 docs/ Generated HTML from the EA project
+
 zira2xls/ Converts the MAX export of the ZiRA into a spreadsheet
+
 ziraim2gv/ Converts the ZiRA Information model to GraphViz diagrams
 
 ----------------
