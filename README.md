@@ -1,6 +1,8 @@
 
 docs/ Generated HTML from the EA project
 
+input/ ...
+
 zira2xls/ Converts the MAX export of the ZiRA into a spreadsheet
 
 ziraim2gv/ Converts the ZiRA Information model to GraphViz diagrams
@@ -13,6 +15,8 @@ ziraim2gv:
 ----------------
 OpenGroup ENGLISH
 
+N.B. zira.fods is "ZiRA v1.0 Spreadsheet+Matrix July 11 2021+EN.xlsx" converted to Open Office Sheets.
+
 English names lookup table from fods export of zira spreadsheet with english column.
 > java -jar /home/michael/Develop/saxon9he.jar -s:/tmp/zira.fods -xsl:english.xslt -o:english.xml 
 
@@ -21,4 +25,8 @@ English names lookup table from fods export of zira spreadsheet with english col
 
 > java -jar /home/michael/Develop/saxon9he.jar -s:Informatiemodel\ ZORG\ Activiteiten.max -xsl:ziraim-to-gv-en.xslt -o:Informatiemodel\ ZORG\ Activiteiten-en.gv
 > dot "Informatiemodel ZORG Activiteiten-en.gv" -Tpng > Informatiemodel\ ZORG\ Activiteiten-en.png
+-----------------
+
+
+> docker run -it -v "$(pwd)":/app node:lts-buster /bin/bash
 
