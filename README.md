@@ -27,6 +27,8 @@ English names lookup table from fods export of zira spreadsheet with english col
 > dot "Informatiemodel ZORG Activiteiten-en.gv" -Tpng > Informatiemodel\ ZORG\ Activiteiten-en.png
 -----------------
 
-
+Adding engligh translation to original zira-v1.0.max file
 > docker run -it -v "$(pwd)":/app node:lts-buster /bin/bash
+@> cd /app
+@> node index.js
 
