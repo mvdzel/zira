@@ -3,8 +3,8 @@ var xml2js = require('xml2js');
 const readXlsxFile = require('read-excel-file/node');
 var parser = new xml2js.Parser();
 
-const filename_xlsx_en = "../input/ZiRA v1.0a Spreadsheet+Matrix including translation.xlsx";
-const filename_max = "../input/zira-v1.0.max";
+const filename_xlsx_en = "input/ZiRA v1.0a Spreadsheet+Matrix including translation.xlsx";
+const filename_max = "../artifacts/zira-v1.0.max";
 
 /**
  * This script takes the original Dutch ZiRA v1.0 MAX file export from the source ZiRA EA model
