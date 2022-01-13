@@ -3,22 +3,24 @@ docs/ Generated HTML from the Enterprise Architect project
 
 artifacts/ Different generated versions of the ZiRA model (master source is the ZiRA Enterprise Architect Project): XLSX, MAX, XML, ArchMate
 
-zira2xls/ Converts the MAX export of the ZiRA into a spreadsheet
+xslts/zira2xls/ Converts the MAX export of the ZiRA into a spreadsheet
 
-ziraim2gv/ Converts the ZiRA Information model to GraphViz diagrams
+xslts/ziraim2gv/ Converts the ZiRA Information model to GraphViz diagrams
 
-appfuncties2max/ Temporary conversion script from RDZ
+xslts/appfuncties2max/ Temporary conversion script from RDZ
 
-adden2max/ Convert the English translations spreadsheet to a max file for import in the EA model 
+scripts/adden2max.js Convert the English translations spreadsheet to a max file for import in the EA model 
+
+scripts/zira2xml.js
 
 ===============
-ziraim2gv:
+xslt/ziraim2gv:
 
 > java -jar /home/michael/Develop/saxon9he.jar -s:Informatiemodel\ ZORG\ Resultaten.max -xsl:ziraim-to-gv.xslt -o:Informatiemodel\ ZORG\ Resultaten.gv
 > dot "Informatiemodel ZORG Resultaten.gv" -Tpng > Informatiemodel\ ZORG\ Resultaten.png
 
 ----------------
-ziraim2gv: OpenGroup ENGLISH
+xslt/ziraim2gv: OpenGroup ENGLISH
 
 N.B. zira.fods is "ZiRA v1.0 Spreadsheet+Matrix July 11 2021+EN.xlsx" converted to Open Office Sheets.
 
@@ -31,7 +33,7 @@ English names lookup table from fods export of zira spreadsheet with english col
 > java -jar /home/michael/Develop/saxon9he.jar -s:Informatiemodel\ ZORG\ Activiteiten.max -xsl:ziraim-to-gv-en.xslt -o:Informatiemodel\ ZORG\ Activiteiten-en.gv
 > dot "Informatiemodel ZORG Activiteiten-en.gv" -Tpng > Informatiemodel\ ZORG\ Activiteiten-en.png
 -----------------
-zira2xls:
+xslt/zira2xls:
 
 > java -jar /home/michael/Develop/saxon9he.jar -s:../artifacts/zira-1.0-nl+en.max -xsl:zira2sheet-4-nl.xslt -o:../artifacts/zira-1.0-nl.xml
 > java -jar /home/michael/Develop/saxon9he.jar -s:../artifacts/zira-1.0-nl+en.max -xsl:zira2sheet-4-en.xslt -o:../artifacts/zira-1.0-en.xml
