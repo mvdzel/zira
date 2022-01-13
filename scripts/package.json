@@ -1,7 +1,7 @@
 {
-  "name": "zira-en",
+  "name": "ZiRA scripts",
   "version": "1.0.0",
-  "description": "Add English translation from OHF to ZiRA",
+  "description": "1. Add English translation from OHF to ZiRA, 2. Convert ZiRA MAX nl+en to xml for importing in spreadsheet",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

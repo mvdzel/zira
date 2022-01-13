@@ -38,10 +38,16 @@ zira2xls:
 .. then import the xml file using LibreOffice "XML Source" and map each type/line to the top/left column of a sheet  
 
 -----------------
-adden2max: Adding engligh translation to original zira-v1.0.max file
+scripts:
+adden2max.js: Adding engligh translation to original zira-v1.0.max file
 
 > docker run -it -v "$(pwd)":/app node:lts-buster /bin/bash
-@> cd /app/adden2max
-@> node index.js > ../artifacts/zira-v1.0-en-add.max
+@> cd /app/scripts
+@> node adden2max.js > ../artifacts/output.max
 .. then import the file in dit ZiRA v1.0.eap using EA and the MAX extension
 .. then export the whole model to v-1.0-en-full.max
+
+zira2xsl.js: Convert max to xml for import in spreadsheet
+@> cd /app/scripts
+@> node zira2xml.js > ../artifacts/tmp-zira-1.0-en.xml
+.. then import the xml into a spreadsheet using LibreOffice XML Data Source
