@@ -11,6 +11,8 @@ const filename_max = "../artifacts/zira-1.0-nl.max";
  * and adds the English translations from the spreadsheet.
  * The output will be a MAX file with the objects were an English translations was defined for import in EA 
  * to create the ZiRA Dutch + English version created with the OpenGroup HealthCareForum.
+ * 
+ * - remove modified attribute, and tag to prevent delete of MAX::ID == ZiRA ID (bug in MAX extension)
  */
 
 var rawmax = fs.readFileSync(filename_max);
@@ -62,6 +64,7 @@ parser.parseString(rawmax, function (err, input) {
         rows.forEach(row => {
             var object = input['model'].objects[0].object.find(element => element.id == row.id);
             delete object["modified"];
+            delete object["tag"];
             object["alias"] = row.name;
             object["notes"] = '<languages xml:space="preserve"><nl-NL>' + object["notes"] + '</nl-NL><en-US>' + row.description + '</en-US></languages>';
             output['model'].objects.object.push(object);
@@ -80,6 +83,7 @@ parser.parseString(rawmax, function (err, input) {
             rows.forEach(row => {
                 var object = input['model'].objects[0].object.find(element => element.id == row.id);
                 delete object["modified"];
+                delete object["tag"];
                 switch(row.type) {
                     case 'BP': object["alias"] = row.name_bp; break;
                     case 'WP': object["alias"] = row.name_wp; break;
@@ -102,6 +106,7 @@ parser.parseString(rawmax, function (err, input) {
                     if (row.type == "BF") {
                         var object = input['model'].objects[0].object.find(element => element.id == row.id);
                         delete object["modified"];
+                        delete object["tag"];
                         object["alias"] = row.name_bf;
                         object["notes"] = '<languages xml:space="preserve"><nl-NL>' + object["notes"] + '</nl-NL><en-US>' + row.description + '</en-US></languages>';
                         output['model'].objects.object.push(object);
@@ -111,6 +116,7 @@ parser.parseString(rawmax, function (err, input) {
                         if (output['model'].objects.object.find(element => element.id == row.id) == undefined) {
                             var object = input['model'].objects[0].object.find(element => element.id == row.id);
                             delete object["modified"];
+                            delete object["tag"];
                             object["alias"] = row.name_ba;
                             object["notes"] = '<languages xml:space="preserve"><nl-NL>' + object["notes"] + '</nl-NL><en-US>' + row.description + '</en-US></languages>';
                             output['model'].objects.object.push(object);

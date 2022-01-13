@@ -45,7 +45,7 @@ adden2max.js: Adding engligh translation to original zira-v1.0.max file
 
 > docker run -it -v "$(pwd)":/app node:lts-buster /bin/bash
 @> cd /app/scripts
-@> node adden2max.js > ../artifacts/output.max
+@> node adden2max.js > output.max
 .. then import the file in dit ZiRA v1.0.eap using EA and the MAX extension
 .. then export the whole model to v-1.0-en-full.max
 

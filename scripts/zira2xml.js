@@ -2,7 +2,7 @@ var fs = require('fs');
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 
-const filename_max = "../artifacts/zira-1.0-nl+en.max";
+const filename_max = "../artifacts/zira-1.0-elements-nl+en.max";
 
 /**
  * This script takes the complete ZiRA MAX nl+en and generated the XML file that can be imported in the spreadsheet
