@@ -1,7 +1,7 @@
 
-docs/ Generated HTML from the EA project
+docs/ Generated HTML from the Enterprise Architect project
 
-artifacts/ Different version of the ZiRA model, XLSX, MAX, XML, ArchMate
+artifacts/ Different generated versions of the ZiRA model (master source is the ZiRA Enterprise Architect Project): XLSX, MAX, XML, ArchMate
 
 zira2xls/ Converts the MAX export of the ZiRA into a spreadsheet
 

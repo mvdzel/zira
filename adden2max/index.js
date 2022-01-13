@@ -4,7 +4,7 @@ const readXlsxFile = require('read-excel-file/node');
 var parser = new xml2js.Parser();
 
 const filename_xlsx_en = "input/ZiRA v1.0a Spreadsheet+Matrix including translation.xlsx";
-const filename_max = "../artifacts/zira-v1.0.max";
+const filename_max = "../artifacts/zira-1.0-nl.max";
 
 /**
  * This script takes the original Dutch ZiRA v1.0 MAX file export from the source ZiRA EA model
@@ -42,7 +42,8 @@ parser.parseString(rawmax, function (err, input) {
     const map_bf = {
         'type': 'type',
         'ZiRA id': 'id',
-        'Business Function': 'name',
+        'Business Function': 'name_bf',
+        'Business Activity': 'name_ba',
         'Description': 'description'
     }
 
@@ -101,9 +102,22 @@ parser.parseString(rawmax, function (err, input) {
                     if (row.type == "BF") {
                         var object = input['model'].objects[0].object.find(element => element.id == row.id);
                         delete object["modified"];
-                        object["alias"] = row.name;
+                        object["alias"] = row.name_bf;
                         object["notes"] = '<languages xml:space="preserve"><nl-NL>' + object["notes"] + '</nl-NL><en-US>' + row.description + '</en-US></languages>';
                         output['model'].objects.object.push(object);
+                    }
+                    else if (row.type = "BA") {
+                        // Only add if not already translated from Business Process sheet
+                        if (output['model'].objects.object.find(element => element.id == row.id) == undefined) {
+                            var object = input['model'].objects[0].object.find(element => element.id == row.id);
+                            delete object["modified"];
+                            object["alias"] = row.name_ba;
+                            object["notes"] = '<languages xml:space="preserve"><nl-NL>' + object["notes"] + '</nl-NL><en-US>' + row.description + '</en-US></languages>';
+                            output['model'].objects.object.push(object);
+                        }
+                        else {
+                            console.error("Already done: " + row.name_ba);
+                        }
                     }
                 });
 
