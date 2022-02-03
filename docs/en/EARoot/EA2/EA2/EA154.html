@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("", " : "))</script> : Public   Note</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">14-12-2016 16:46:09</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">14-12-2016 16:46:09</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA151.html">Samenhang Behandelplan en Diagnose</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">&lt;b&gt;&lt;u&gt;Diagnose relatie met xxxplan&lt;/u&gt;&lt;/b&gt;&lt;br/&gt;Diagnose is input / start voor behandeling (protocollen / mogelijke behandelingen per diagnose + context) die uitgespecificeerd staat in een behandelplan.&lt;br/&gt;Vervolgens kunnen verschillende soorten behandelingen op het plan staan, waaronder ook therapie en zorg. Voor therapie en zorg wordt een nieuwe specifieke diagnose bepaald en daarvoor wordt dan een (detail) specifiek plan gemaakt.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;&lt;u&gt;BP &quot;Opstellen Behandelplan&quot; opmerkingen&lt;/u&gt;&lt;/b&gt;&lt;br/&gt;!! &quot;Plannen verrichting&quot; is (zie beschrijving) &quot;Plannen locatie&quot;, &quot;Plannen middelen&quot; en &quot;Plannen personen&quot; in 1.&lt;br/&gt;Als dit waar is dan hoef je dus bij behandelen geen middelen meer te plannen, want dat is in het behandelplan proces al gedaan.&lt;br/&gt;Is &quot;verrichting&quot; een specifiek vorm van behandeling?&lt;br/&gt;&lt;br/&gt;Voorstel: BA &quot;Plannen verrichting&quot; -#gt; &quot;Inplannen behandeling&quot;, verrichting is volgens de definitie alleen de &quot;verrichting code van een behandeling&quot;.&lt;br/&gt;Voorstel: WP: Plannen behandeling -#gt; Plannen behandelingen (of behandelplan wat een verzameling behandelingen is)&lt;br/&gt;&lt;br/&gt;&lt;b&gt;&lt;u&gt;IO Behandelplan&lt;/u&gt;&lt;/b&gt;&lt;br/&gt;Het plan tot het verlichten of wegnemen van gezondheidsklachten en gebreken volgens een bepaalde methode &lt;font color=&quot;#008000&quot;&gt;(stappen)&lt;/font&gt; of inzicht met een vooropgezet doel.&lt;br/&gt;De invulling hiervan is &lt;font color=&quot;#008000&quot;&gt;&lt;b&gt;aandoening&lt;/b&gt;&lt;/font&gt;&lt;b&gt;!&lt;/b&gt;(&lt;font color=&quot;#ff0000&quot;&gt;specialisme&lt;/font&gt;)-specifiek, maar kan wel over meerdere disciplines en specialismen heen gaan.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;@MZ&lt;/i&gt;&lt;br/&gt;</div>
+
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

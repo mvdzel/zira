@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lifecycle Operatie</title>
+<link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="PageBody">
+	
+<img src="EA166.png" usemap="#EA166" border="0" />
+
+<MAP NAME="EA166">
+<area shape="rect" coords="150,400,310,479" href="EA175.html" target="_self">
+<area shape="rect" coords="160,520,190,550" href="EA176.html" target="_self">
+<area shape="rect" coords="540,541,645,611" href="../../EA4/EA6/EA689.html" target="_self">
+<area shape="rect" coords="250,500,355,570" href="../../EA4/EA6/EA718.html" target="_self">
+<area shape="rect" coords="380,600,485,670" href="../../EA4/EA6/EA705.html" target="_self">
+<area shape="rect" coords="400,419,490,489" href="../../EA4/EA9/EA957.html" target="_self">
+<area shape="rect" coords="10,250,115,320" href="../../EA4/EA6/EA688.html" target="_self">
+<area shape="rect" coords="450,60,555,130" href="../../EA4/EA6/EA697.html" target="_self">
+<area shape="rect" coords="260,10,365,80" href="../../EA4/EA6/EA687.html" target="_self">
+<area shape="rect" coords="80,50,185,120" href="../../EA4/EA6/EA699.html" target="_self">
+<area shape="rect" coords="260,280,350,350" href="../../EA4/EA9/EA954.html" target="_self">
+<area shape="rect" coords="140,390,680,690" href="EA172.html" target="_self">
+</MAP>
+
+	<div class="ObjectTitle">Lifecycle Operatie : Class diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">10-2-2017 08:13:37</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">17-5-2017 16:30:00</td>
+		</tr>
+	</table>
+	
+</div>
+ 
+</body>
+</html>

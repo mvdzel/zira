@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Pattern: Basis Aanvraag Resultaat</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="PageBody">
+	
+<img src="EA111.png" usemap="#EA111" border="0" />
+
+<MAP NAME="EA111">
+<area shape="rect" coords="250,280,470,467" href="EA115.html" target="_self">
+<area shape="rect" coords="980,170,1100,230" href="EA117.html" target="_self">
+<area shape="rect" coords="541,239,651,319" href="EA135.html" target="_self">
+<area shape="rect" coords="370,90,475,160" href="EA125.html" target="_self">
+<area shape="rect" coords="681,340,791,420" href="EA131.html" target="_self">
+<area shape="rect" coords="690,90,795,160" href="EA126.html" target="_self">
+<area shape="rect" coords="20,519,330,670" href="EA119.html" target="_self">
+<area shape="rect" coords="810,239,920,319" href="EA132.html" target="_self">
+<area shape="rect" coords="960,700,1050,780" href="EA140.html" target="_self">
+<area shape="rect" coords="210,730,300,810" href="EA134.html" target="_self">
+<area shape="rect" coords="10,20,230,479" href="EA120.html" target="_self">
+<area shape="rect" coords="680,700,770,780" href="EA133.html" target="_self">
+<area shape="rect" coords="780,800,870,880" href="EA141.html" target="_self">
+<area shape="rect" coords="580,800,690,880" href="EA139.html" target="_self">
+<area shape="rect" coords="320,10,590,429" href="EA129.html" target="_self">
+<area shape="rect" coords="600,10,940,429" href="EA130.html" target="_self">
+<area shape="rect" coords="170,650,520,900" href="EA128.html" target="_self">
+<area shape="rect" coords="560,650,910,900" href="EA127.html" target="_self">
+</MAP>
+
+	<div class="ObjectTitle">Pattern: Basis Aanvraag Resultaat : Business Layer diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">14-12-2016 16:56:15</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">7-5-2017 21:15:55</td>
+		</tr>
+	</table>
+	
+</div>
+ 
+</body>
+</html>
