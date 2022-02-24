@@ -62,14 +62,10 @@ function Enumerator( object )
 	}
 }
 
-function DumpElements( indent, thePackage )
+function EnumerateElements( indent, elements )
 {
-	// Cast thePackage to EA.Package so we get intellisense
-	var currentPackage as EA.Package;
-	currentPackage = thePackage;
-	
 	// Iterate through all elements and add them to the list
-	var elementEnumerator = new Enumerator( currentPackage.Elements );
+	var elementEnumerator = new Enumerator( elements );
 	while ( !elementEnumerator.atEnd() )
 	{
 		var currentElement as EA.Element;
@@ -77,26 +73,29 @@ function DumpElements( indent, thePackage )
 
 		var name = currentElement.Name;
 		var alias = currentElement.Alias;
-		var label = (alias == "") ? name : alias;
 		var notes = currentElement.Notes;
 		if (name == "")
 		{
-			Session.Output( thePackage.Name + "/" + label + " :: name missing" );
+			var pkgname = Repository.GetPackageByID( currentElement.PackageID ).Name;
+			Session.Output( pkgname + "/" + alias + " :: name missing", currentElement.ElementGUID );
 		}
-		if (alias == "")
+		if (notes == "")
 		{
-			Session.Output( thePackage.Name + "/" + label + " :: alias missing" );
+			Session.Output( name + "/" + alias + " :: notes empty", currentElement.ElementGUID );
 		}
-		if (notes.indexOf ("<en-US>") == -1)
-		{
-			Session.Output( thePackage.Name + "/" + label + " :: en-US notes missing" );
-		}
-		if (notes.indexOf ("<en-US>undefined") != -1)
-		{
-			Session.Output( thePackage.Name + "/" + label + " :: notes undefined" );
-		}
+		
+		EnumerateElements( indent, currentElement.Elements );
+		
 		elementEnumerator.moveNext();
 	}
+}
+
+function DumpElements( indent, thePackage )
+{
+	// Cast thePackage to EA.Package so we get intellisense
+	var currentPackage as EA.Package;
+	currentPackage = thePackage;
+	EnumerateElements ( indent, thePackage.Elements );
 }
 
 function DumpPackage( indent, thePackage )
@@ -104,18 +103,6 @@ function DumpPackage( indent, thePackage )
 	// Cast thePackage to EA.Package so we get intellisense
 	var currentPackage as EA.Package;
 	currentPackage = thePackage;
-
-	var name = thePackage.Name;
-	var alias = thePackage.Alias;
-	var label = (alias == "") ? name : alias;
-	if (name == "")
-	{
-		Session.Output( label + " :: name missing" );
-	}
-	if (alias == "")
-	{
-		Session.Output( label + " :: alias missing" );
-	}
 	
 	// Dump the elements this package contains
 	DumpElements( indent + "    ", currentPackage );
