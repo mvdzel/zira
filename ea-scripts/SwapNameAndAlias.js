@@ -4,7 +4,7 @@
  * Script Name: Swap Name and Alias
  * Author: Michael van der Zel
  * Purpose: Swap the Name and Alias (Dutch vs English labels) for HTML Document Generation
- * Date: 3-feb-2022
+ * Date: 24-feb-2022
  */
 	function moveNext()
 	{
@@ -62,14 +62,10 @@ function Enumerator( object )
 	}
 }
 
-function DumpElements( indent, thePackage )
+function EnumerateElements( indent, elements )
 {
-	// Cast thePackage to EA.Package so we get intellisense
-	var currentPackage as EA.Package;
-	currentPackage = thePackage;
-	
 	// Iterate through all elements and add them to the list
-	var elementEnumerator = new Enumerator( currentPackage.Elements );
+	var elementEnumerator = new Enumerator( elements );
 	while ( !elementEnumerator.atEnd() )
 	{
 		var currentElement as EA.Element;
@@ -83,8 +79,18 @@ function DumpElements( indent, thePackage )
 		currentElement.Alias = name;
 		currentElement.Update();
 
+		EnumerateElements( indent, currentElement.Elements );
+
 		elementEnumerator.moveNext();
 	}
+}
+
+function DumpElements( indent, thePackage )
+{
+	// Cast thePackage to EA.Package so we get intellisense
+	var currentPackage as EA.Package;
+	currentPackage = thePackage;
+	EnumerateElements( indent, currentPackage.Elements );
 }
 
 function DumpPackage( indent, thePackage )

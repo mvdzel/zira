@@ -1,11 +1,14 @@
 !INC Local Scripts.EAConstants-JScript
 
 /*
- * Script Name: Select English Notes
+ * Script Name: Select Language Notes
  * Author: Michael van der Zel
- * Purpose: Select English Notes
- * Date: 4-feb-2022
+ * Purpose: Select Notes in configured language
+ * Date: 24-feb-2022
  */
+const LANGUAGE = "en-US";
+//const LANGUAGE = "nl-NL";
+ 
 	function moveNext()
 	{
 		if(this.iElem > -1)
@@ -62,14 +65,10 @@ function Enumerator( object )
 	}
 }
 
-function DumpElements( indent, thePackage )
-{
-	// Cast thePackage to EA.Package so we get intellisense
-	var currentPackage as EA.Package;
-	currentPackage = thePackage;
-	
+function EnumerateElements( indent, elements )
+{	
 	// Iterate through all elements and add them to the list
-	var elementEnumerator = new Enumerator( currentPackage.Elements );
+	var elementEnumerator = new Enumerator( elements );
 	while ( !elementEnumerator.atEnd() )
 	{
 		var currentElement as EA.Element;
@@ -78,20 +77,32 @@ function DumpElements( indent, thePackage )
 		Session.Output( indent + currentElement.Name );
 
 		var notes = currentElement.Notes;
-		var after = notes.indexOf("<en-US>");
-		var before = notes.indexOf("</en-US>");
+		var after = notes.indexOf( "<" + LANGUAGE + ">" );
+		var before = notes.indexOf( "</" + LANGUAGE + ">" );
 		if (after != -1) 
 		{
 			var notes_en = notes.substring(after + 7, before);
-			if ( notes_en != "undefined" )
+			if ( notes_en == "undefined" )
 			{
-				Session.Output( after + "," + before + "," + notes_en );
-				currentElement.Notes = notes_en;
-				currentElement.Update();
+				notes_en = "";
 			}
+			Session.Output( after + "," + before + "," + notes_en );
+			currentElement.Notes = notes_en;
+			currentElement.Update();
 		}
+		
+		EnumerateElements( indent, currentElement.Elements );
+					
 		elementEnumerator.moveNext();
 	}
+}
+
+function DumpElements( indent, thePackage )
+{
+	// Cast thePackage to EA.Package so we get intellisense
+	var currentPackage as EA.Package;
+	currentPackage = thePackage;
+	EnumerateElements ( indent, currentPackage.Elements );
 }
 
 function DumpPackage( indent, thePackage )
