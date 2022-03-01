@@ -7,6 +7,9 @@
 	<!--
 		Maak MAX Export van de Content Package!
 
+		[1-mar-2022]
+		io_out en io_in toegevoegd voor proces
+
 		[5-jan-2022]
 		Omgezet naar alias en engels, nog te doen: Applicatiefuncties en Principes
 
@@ -113,6 +116,8 @@
 					<werkproces>Werkproces</werkproces>
 					<processtap>Processtap = Bedrijfsactiviteit</processtap>
 					<beschrijving>Beschrijving</beschrijving>
+					<io_in/>
+					<io_out/>
 					<bedrijfsfuncties>Bedrijfsfuncties</bedrijfsfuncties>
 					<zira_id>ZiRA id</zira_id>
 				</line> -->
@@ -129,6 +134,8 @@
 						<werkproces/>
 						<processtap/>
 						<beschrijving><xsl:value-of select="substring-before(substring-after(/max:model/objects/object[id=$bpid]/notes,'&lt;en-US&gt;'),'&lt;/en-US&gt;')"/></beschrijving>
+						<io_in/>
+						<io_out/>
 						<bedrijfsfuncties/>
 						<zira_id><xsl:value-of select="$bpid"/></zira_id>
 					</line>
@@ -143,6 +150,8 @@
 							<werkproces><xsl:value-of select="$werkproces"/></werkproces>
 							<processtap/>
 							<beschrijving><xsl:value-of select="substring-before(substring-after(/max:model/objects/object[id=$wpid]/notes,'&lt;en-US&gt;'),'&lt;/en-US&gt;')"/></beschrijving>
+							<io_in/>
+							<io_out/>
 							<bedrijfsfuncties/>
 							<zira_id><xsl:value-of select="$wpid"/></zira_id>
 						</line>
@@ -151,6 +160,12 @@
 							<xsl:variable name="baid" select="sourceId"/>
 							<xsl:variable name="ba" select="/max:model/objects/object[id=$baid]"/>
 							<xsl:variable name="domeinid" select="/max:model/relationships/relationship[sourceId=$baid and stereotype='ArchiMate_Aggregation' and starts-with(destId,'2.16.840.1.113883.2.4.3.11.29.2.')]/destId"/>
+
+							<xsl:variable name="baIORelIds_in" select="/max:model/relationships/relationship[destId=$baid and type='InformationFlow']/sourceId"/>
+							<xsl:variable name="baIORelIds_out" select="/max:model/relationships/relationship[sourceId=$baid and type='InformationFlow']/destId"/>
+							<xsl:variable name="baIOs_in" select="/max:model/objects/object[(id=$baIORelIds_in) and stereotype='ArchiMate_BusinessObject']/alias"/>
+							<xsl:variable name="baIOs_out" select="/max:model/objects/object[(id=$baIORelIds_out) and stereotype='ArchiMate_BusinessObject']/alias"/>
+							
 							<line>
 								<type>BA</type>
 								<dienst><xsl:value-of select="$dienst"/></dienst>
@@ -158,6 +173,8 @@
 								<werkproces><xsl:value-of select="$werkproces"/></werkproces>
 								<processtap><xsl:value-of select="$ba/alias"/></processtap>
 								<beschrijving><xsl:value-of select="substring-before(substring-after($ba/notes,'&lt;en-US&gt;'),'&lt;/en-US&gt;')"/></beschrijving>
+								<io_in><xsl:value-of select="string-join($baIOs_in,$nl)"/></io_in>
+								<io_out><xsl:value-of select="string-join($baIOs_out,$nl)"/></io_out>
 								<bedrijfsfuncties><xsl:call-template name="bf-ba"><xsl:with-param name="baid" select="$baid"/></xsl:call-template></bedrijfsfuncties>
 								<zira_id><xsl:value-of select="$baid"/></zira_id>
 							</line>

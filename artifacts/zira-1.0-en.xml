@@ -2378,6 +2378,8 @@ ICT services include presentation aggregation (Portals), search engine, offering
          <werkproces/>
          <processtap/>
          <beschrijving/>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id/>
       </line>
@@ -2388,6 +2390,8 @@ ICT services include presentation aggregation (Portals), search engine, offering
          <werkproces/>
          <processtap/>
          <beschrijving>Precondition: Reference Postcondition: a contact is scheduled</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>849</zira_id>
       </line>
@@ -2398,6 +2402,8 @@ ICT services include presentation aggregation (Portals), search engine, offering
          <werkproces>Process referral request</werkproces>
          <processtap/>
          <beschrijving>Receiving and processing a request (digital and/or paper) from a patient or healthcare provider for service(s) within a hospital.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1060</zira_id>
       </line>
@@ -2408,6 +2414,8 @@ ICT services include presentation aggregation (Portals), search engine, offering
          <werkproces>Process referral request</werkproces>
          <processtap>Manage patient data</processtap>
          <beschrijving>Recording and maintaining administrative data; Insurance, personal identification number,  etc.</beschrijving>
+         <io_out>Patient</io_out>
+         <io_in>Referral information</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 ADDITIONAL RESEARCH
 DIAGNOSIS
@@ -2421,6 +2429,8 @@ DIAGNOSIS
          <werkproces>Process referral request</werkproces>
          <processtap>Manage patient file</processtap>
          <beschrijving>Processing (medical) patient information in the patient file.</beschrijving>
+         <io_out>Patient file</io_out>
+         <io_in>Referral information</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1219</zira_id>
@@ -2433,6 +2443,9 @@ DIAGNOSIS
          <processtap>Accept referral</processtap>
          <beschrijving>Receiving and administrative processing of the referral.
 Start of the treatment relationship as a hospital.</beschrijving>
+         <io_out>Referral request</io_out>
+         <io_in>Referral request
+Referral information</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1260</zira_id>
@@ -2444,6 +2457,8 @@ Start of the treatment relationship as a hospital.</beschrijving>
          <werkproces>Process referral request</werkproces>
          <processtap>Request / Receive additional information</processtap>
          <beschrijving>Request additional medical/administrative information from an external source</beschrijving>
+         <io_out/>
+         <io_in>External information, patient</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1955</zira_id>
@@ -2455,6 +2470,8 @@ Start of the treatment relationship as a hospital.</beschrijving>
          <werkproces>Process referral request</werkproces>
          <processtap>Assign to Caregiver</processtap>
          <beschrijving>Assign a "care provider" of a (sub)specialism to the referral as a practitioner.</beschrijving>
+         <io_out>Referral request</io_out>
+         <io_in/>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1956</zira_id>
@@ -2466,6 +2483,8 @@ Start of the treatment relationship as a hospital.</beschrijving>
          <werkproces>Determining care needs</werkproces>
          <processtap/>
          <beschrijving>Post-condition: that you know what you are going to do with the referral.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1061</zira_id>
       </line>
@@ -2476,6 +2495,8 @@ Start of the treatment relationship as a hospital.</beschrijving>
          <werkproces>Determining care needs</werkproces>
          <processtap>Determining care needs</processtap>
          <beschrijving>Assessing the patient's care needs and determining how they can be delivered.  This includes triage in specific contexts (e.g. E&amp;D).</beschrijving>
+         <io_out>Care needs</io_out>
+         <io_in/>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1222</zira_id>
@@ -2487,6 +2508,8 @@ Start of the treatment relationship as a hospital.</beschrijving>
          <werkproces>Determining care needs</werkproces>
          <processtap>Review referral</processtap>
          <beschrijving>Take note of the nature and background of a referral by the (assigned) healthcare provider.</beschrijving>
+         <io_out>Referral request</io_out>
+         <io_in>Referral request</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1254</zira_id>
@@ -2508,6 +2531,8 @@ You need the referral information to determine which care providers, but that ha
 So ""Planning persons"" is more than just caregivers.
 
 In Schedule appointment, the patient and healthcare provider are determined whether this has already been done when processing the referral.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1062</zira_id>
       </line>
@@ -2518,6 +2543,11 @@ In Schedule appointment, the patient and healthcare provider are determined whet
          <werkproces>Plan contact</werkproces>
          <processtap>Schedule an appointment</processtap>
          <beschrijving>Recording date/time/place, healthcare provider(s) and patient involved for a contact/interaction moment.</beschrijving>
+         <io_out>Appointment</io_out>
+         <io_in>Healthcare Professional
+Schedule
+Patient
+Appointment request</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1119</zira_id>
@@ -2529,6 +2559,9 @@ In Schedule appointment, the patient and healthcare provider are determined whet
          <werkproces>Plan contact</werkproces>
          <processtap>Planning the location</processtap>
          <beschrijving>Determining and planning the desired use of spaces and rooms.</beschrijving>
+         <io_out>Location
+Appointment</io_out>
+         <io_in>Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -2542,6 +2575,10 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan contact</werkproces>
          <processtap>Plan resources</processtap>
          <beschrijving>Planning the desired deployment of resources such as equipment, instruments, blood products, food and beds.</beschrijving>
+         <io_out>Appointment
+Material</io_out>
+         <io_in>Schedule
+Treatment plan</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -2555,6 +2592,9 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan contact</werkproces>
          <processtap>Plan people</processtap>
          <beschrijving>Determining and planning the desired deployment of people.</beschrijving>
+         <io_out>Appointment
+Person</io_out>
+         <io_in>Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -2568,6 +2608,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces/>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>850</zira_id>
       </line>
@@ -2578,6 +2620,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Prepare contact</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1063</zira_id>
       </line>
@@ -2588,6 +2632,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Prepare contact</werkproces>
          <processtap>Prepare contact</processtap>
          <beschrijving>Preparing contact with the patient so that this contact is as pleasant and efficient as possible</beschrijving>
+         <io_out>Appointment</io_out>
+         <io_in>Appointment</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1220</zira_id>
@@ -2599,6 +2645,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Receive patient</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1064</zira_id>
       </line>
@@ -2609,6 +2657,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Receive patient</werkproces>
          <processtap>Received patient</processtap>
          <beschrijving>Received from the patient.</beschrijving>
+         <io_out>Appointment</io_out>
+         <io_in>Appointment</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 ADDITIONAL RESEARCH
 </bedrijfsfuncties>
@@ -2621,6 +2671,8 @@ ADDITIONAL RESEARCH
          <werkproces>Receive patient</werkproces>
          <processtap>Manage patient data</processtap>
          <beschrijving>Recording and maintaining administrative data; Insurance, personal identification number,  etc.</beschrijving>
+         <io_out>Patient</io_out>
+         <io_in>Referral information</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 ADDITIONAL RESEARCH
 DIAGNOSIS
@@ -2634,6 +2686,8 @@ DIAGNOSIS
          <werkproces>Receive patient</werkproces>
          <processtap>Identify patient</processtap>
          <beschrijving>Identifying can lead to changes in patient data.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>2191</zira_id>
@@ -2645,6 +2699,8 @@ DIAGNOSIS
          <werkproces>Collect additional information</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1065</zira_id>
       </line>
@@ -2655,6 +2711,8 @@ DIAGNOSIS
          <werkproces>Collect additional information</werkproces>
          <processtap>Request a peer consultation</processtap>
          <beschrijving>Request a fellow healthcare provider for a specific opinion/advice regarding diagnosis or treatment.</beschrijving>
+         <io_out>Collegiate consultation</io_out>
+         <io_in/>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1115</zira_id>
@@ -2666,6 +2724,9 @@ DIAGNOSIS
          <werkproces>Collect additional information</werkproces>
          <processtap>Conduct your own research</processtap>
          <beschrijving>Observing/measurement of certain bodily functions such as breathing, blood pressure, heart rate, temperature, fluid balance, reflexes or other aspects of bodily functioning. Also (function) examination by the care provider himself as part of the consultation.</beschrijving>
+         <io_out>Physical examination result
+Results of own research</io_out>
+         <io_in/>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1141</zira_id>
@@ -2677,6 +2738,8 @@ DIAGNOSIS
          <werkproces>Collect additional information</werkproces>
          <processtap>Request Additional diagnostic testing</processtap>
          <beschrijving>Request additional Diagnostic Testing such as lab or X-ray examination.</beschrijving>
+         <io_out>additional diagnostic testing</io_out>
+         <io_in/>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1145</zira_id>
@@ -2688,6 +2751,11 @@ DIAGNOSIS
          <werkproces>Collect additional information</werkproces>
          <processtap>Taking anamnesis</processtap>
          <beschrijving>Collecting information about past history and complaints by means of targeted questions; this may also have been provided prior to the consultation by means of, for example, questionnaires or self-management information or checking medical history.</beschrijving>
+         <io_out>Anamnesis report</io_out>
+         <io_in>Self-management information
+Care needs
+Referral request
+Referral information</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1209</zira_id>
@@ -2699,6 +2767,8 @@ DIAGNOSIS
          <werkproces>Assess information</werkproces>
          <processtap/>
          <beschrijving>Pre-condition: information is available.Post-condition: information reviewed and review processed.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1066</zira_id>
       </line>
@@ -2711,6 +2781,8 @@ DIAGNOSIS
          <beschrijving>Studying and assessing the information from and about the patient.
 
 Analyze conclusion, diagnosis, history, research results, evaluation of previous treatment, etc.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1146</zira_id>
@@ -2722,6 +2794,8 @@ Analyze conclusion, diagnosis, history, research results, evaluation of previous
          <werkproces>Assess information</werkproces>
          <processtap>Assess the result of a collegiate or external consultation</processtap>
          <beschrijving>Take note of and assess the findings made during a consultation with a fellow healthcare provider, and include these in the diagnosis and treatment plan.</beschrijving>
+         <io_out>Result collegiate consultation</io_out>
+         <io_in>Result collegiate consultation</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1152</zira_id>
@@ -2733,6 +2807,8 @@ Analyze conclusion, diagnosis, history, research results, evaluation of previous
          <werkproces>Assess information</werkproces>
          <processtap>Assess self-management information</processtap>
          <beschrijving>Receiving and processing information (eg measurements, diary and findings) from the patient about their own care process, both digitally and on paper.</beschrijving>
+         <io_out>Self-management information</io_out>
+         <io_in>Self-management information</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1239</zira_id>
@@ -2744,6 +2820,10 @@ Analyze conclusion, diagnosis, history, research results, evaluation of previous
          <werkproces>Assess information</werkproces>
          <processtap>Assessing results (additional or own) research</processtap>
          <beschrijving>Take note of the results of additional diagnostic testing or research conducted by the patient himself and include them in the diagnosis and treatment plan.</beschrijving>
+         <io_out>Results of own research
+Diagnostics Results</io_out>
+         <io_in>Results of own research
+Diagnostics Results</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1245</zira_id>
@@ -2755,6 +2835,8 @@ Analyze conclusion, diagnosis, history, research results, evaluation of previous
          <werkproces>Diagnosis</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1067</zira_id>
       </line>
@@ -2765,6 +2847,11 @@ Analyze conclusion, diagnosis, history, research results, evaluation of previous
          <werkproces>Diagnosis</werkproces>
          <processtap>Inform patient</processtap>
          <beschrijving>In the context of Treatment Plan: Informing and advising on, for example, the nature, approach and risk of an examination, treatment (possibilities) or surgery that the patient undergoes.</beschrijving>
+         <io_out/>
+         <io_in>Patient file
+Diagnosis
+Treatment options
+Patient folder</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 TREATMENT PLANNING
 TREATMENT PLANNING
@@ -2778,6 +2865,8 @@ TREATMENT PLANNING
          <werkproces>Diagnosis</werkproces>
          <processtap>Determine diagnosis</processtap>
          <beschrijving>In the context of Diagnosis: Informing about the diagnosis made and the possible further course of the treatment process"</beschrijving>
+         <io_out>Diagnosis</io_out>
+         <io_in>Patient file</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 </bedrijfsfuncties>
          <zira_id>1210</zira_id>
@@ -2789,6 +2878,8 @@ TREATMENT PLANNING
          <werkproces/>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>851</zira_id>
       </line>
@@ -2799,6 +2890,8 @@ TREATMENT PLANNING
          <werkproces>Assessing research application</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1068</zira_id>
       </line>
@@ -2809,6 +2902,8 @@ TREATMENT PLANNING
          <werkproces>Assessing research application</werkproces>
          <processtap>Assess research application</processtap>
          <beschrijving>Assessment of the research application by the researcher.</beschrijving>
+         <io_out>Research</io_out>
+         <io_in>Research</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1174</zira_id>
@@ -2820,6 +2915,8 @@ TREATMENT PLANNING
          <werkproces>Plan research</werkproces>
          <processtap/>
          <beschrijving>Process Steps Planning people, resources and location can also be executed simultaneously.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1069</zira_id>
       </line>
@@ -2830,6 +2927,8 @@ TREATMENT PLANNING
          <werkproces>Plan research</werkproces>
          <processtap>Process request</processtap>
          <beschrijving>Receive an application and check it for completeness and correctness + feedback that the application has been received in good order</beschrijving>
+         <io_out>Order</io_out>
+         <io_in>Order</io_in>
          <bedrijfsfuncties>TREATMENT PLANNING
 ADDITIONAL RESEARCH
 </bedrijfsfuncties>
@@ -2842,6 +2941,10 @@ ADDITIONAL RESEARCH
          <werkproces>Plan research</werkproces>
          <processtap>Plan research</processtap>
          <beschrijving>Record date/time for conducting a specific survey.</beschrijving>
+         <io_out>Research
+Appointment</io_out>
+         <io_in>Research
+Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1221</zira_id>
@@ -2853,6 +2956,9 @@ ADDITIONAL RESEARCH
          <werkproces>Plan research</werkproces>
          <processtap>Planning the location</processtap>
          <beschrijving>Determining and planning the desired use of spaces and rooms.</beschrijving>
+         <io_out>Location
+Appointment</io_out>
+         <io_in>Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -2866,6 +2972,10 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan research</werkproces>
          <processtap>Plan resources</processtap>
          <beschrijving>Planning the desired deployment of resources such as equipment, instruments, blood products, food and beds.</beschrijving>
+         <io_out>Appointment
+Material</io_out>
+         <io_in>Schedule
+Treatment plan</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -2879,6 +2989,9 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan research</werkproces>
          <processtap>Plan people</processtap>
          <beschrijving>Determining and planning the desired deployment of people.</beschrijving>
+         <io_out>Appointment
+Person</io_out>
+         <io_in>Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -2892,6 +3005,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Prepare research</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1070</zira_id>
       </line>
@@ -2902,6 +3017,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Prepare research</werkproces>
          <processtap>Check material data</processtap>
          <beschrijving>Receive and verify material data.</beschrijving>
+         <io_out>Research material</io_out>
+         <io_in>Research material</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1143</zira_id>
@@ -2913,6 +3030,8 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Prepare research</werkproces>
          <processtap>Received patient</processtap>
          <beschrijving>Received from the patient.</beschrijving>
+         <io_out>Appointment</io_out>
+         <io_in>Appointment</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 ADDITIONAL RESEARCH
 </bedrijfsfuncties>
@@ -2925,6 +3044,8 @@ ADDITIONAL RESEARCH
          <werkproces>Prepare research</werkproces>
          <processtap>Taking body material</processtap>
          <beschrijving>The collection of body material required for research.</beschrijving>
+         <io_out>Research material</io_out>
+         <io_in/>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1154</zira_id>
@@ -2936,6 +3057,8 @@ ADDITIONAL RESEARCH
          <werkproces>Prepare research</werkproces>
          <processtap>Manage patient data</processtap>
          <beschrijving>Recording and maintaining administrative data; Insurance, personal identification number,  etc.</beschrijving>
+         <io_out>Patient</io_out>
+         <io_in>Referral information</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 ADDITIONAL RESEARCH
 DIAGNOSIS
@@ -2949,6 +3072,8 @@ DIAGNOSIS
          <werkproces>Conducting research</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1071</zira_id>
       </line>
@@ -2963,6 +3088,10 @@ The collection of human material and the collection of visual material is part o
 
 A Result is a specific type depending on the Research requested.
 The result may be the raw value (result of measurement/research) and/or interpretation derived from this (report?), including image</beschrijving>
+         <io_out>Research
+Diagnostics Results</io_out>
+         <io_in>Research
+Research material</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1108</zira_id>
@@ -2974,6 +3103,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Assess result</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1072</zira_id>
       </line>
@@ -2984,6 +3115,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Assess result</werkproces>
          <processtap>Assess the result of Additional Diagnostic Testing</processtap>
          <beschrijving>Reading and interpreting the results of research.</beschrijving>
+         <io_out>Diagnostics Results</io_out>
+         <io_in>Diagnostics Results</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1164</zira_id>
@@ -2995,6 +3128,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Report result</werkproces>
          <processtap/>
          <beschrijving>BA Release result is still missing between Drafting report and Notifying applicant.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1073</zira_id>
       </line>
@@ -3005,6 +3140,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Report result</werkproces>
          <processtap>Make report available</processtap>
          <beschrijving>Sending the report of the result of the requested investigation to the applicant.</beschrijving>
+         <io_out/>
+         <io_in>Research report</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1102</zira_id>
@@ -3016,6 +3153,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Report result</werkproces>
          <processtap>Notify applicant</processtap>
          <beschrijving>Notify the applicant so that they know that a result is available.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1165</zira_id>
@@ -3027,6 +3166,9 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Report result</werkproces>
          <processtap>Prepare report</processtap>
          <beschrijving>Recording the result of the investigation.</beschrijving>
+         <io_out>Research
+Research report</io_out>
+         <io_in>Result</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 </bedrijfsfuncties>
          <zira_id>1206</zira_id>
@@ -3038,6 +3180,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces/>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>852</zira_id>
       </line>
@@ -3048,6 +3192,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Assess advice request</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1074</zira_id>
       </line>
@@ -3058,6 +3204,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Assess advice request</werkproces>
          <processtap>Accept advice request</processtap>
          <beschrijving>Take note of the nature and background of a request for advice, assess whether the requested care is appropriate and can also be provided.</beschrijving>
+         <io_out>Advice</io_out>
+         <io_in>Advice</io_in>
          <bedrijfsfuncties>ADVICE
 </bedrijfsfuncties>
          <zira_id>1194</zira_id>
@@ -3069,6 +3217,8 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Giving advice</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1075</zira_id>
       </line>
@@ -3079,6 +3229,9 @@ The result may be the raw value (result of measurement/research) and/or interpre
          <werkproces>Giving advice</werkproces>
          <processtap>Determining treatment options</processtap>
          <beschrijving>Determining which treatments are possible for the patient's care needs on the basis of all available data.</beschrijving>
+         <io_out>Treatment options</io_out>
+         <io_in>Patient file
+Diagnosis</io_in>
          <bedrijfsfuncties>ADVICE
 TREATMENT PLANNING
 TREATMENT PLANNING
@@ -3092,6 +3245,9 @@ TREATMENT PLANNING
          <werkproces>Giving advice</werkproces>
          <processtap>Determining treatment advice</processtap>
          <beschrijving>Determining and establishing a treatment recommendation.</beschrijving>
+         <io_out>Advisory report</io_out>
+         <io_in>Patient file
+Advice</io_in>
          <bedrijfsfuncties>ADVICE
 </bedrijfsfuncties>
          <zira_id>1135</zira_id>
@@ -3103,6 +3259,10 @@ TREATMENT PLANNING
          <werkproces>Giving advice</werkproces>
          <processtap>Advise patient</processtap>
          <beschrijving>Provide advice to the patient on how to deal with his complaints.</beschrijving>
+         <io_out/>
+         <io_in>Patient file
+Advisory report
+Advice</io_in>
          <bedrijfsfuncties>ADVICE
 </bedrijfsfuncties>
          <zira_id>1216</zira_id>
@@ -3115,6 +3275,8 @@ TREATMENT PLANNING
          <processtap/>
          <beschrijving>Pre-condition: (preliminary/work) diagnosis has been made
 Post-condition: the treatment plan has been drawn up and activities and resources have been planned.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>853</zira_id>
       </line>
@@ -3129,6 +3291,8 @@ Post-condition: a (specific) treatment plan has been determined
 
 After determining treatment options (MDO?) for diagnosis,
 an option is chosen together with the patient (informing the patient) and concent is asked for it and then the details are filled in (treatment plan).</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1077</zira_id>
       </line>
@@ -3139,6 +3303,9 @@ an option is chosen together with the patient (informing the patient) and concen
          <werkproces>Determining treatment plan</werkproces>
          <processtap>Determining treatment options</processtap>
          <beschrijving>Determining which treatments are possible for the patient's care needs on the basis of all available data.</beschrijving>
+         <io_out>Treatment options</io_out>
+         <io_in>Patient file
+Diagnosis</io_in>
          <bedrijfsfuncties>ADVICE
 TREATMENT PLANNING
 TREATMENT PLANNING
@@ -3152,6 +3319,8 @@ TREATMENT PLANNING
          <werkproces>Determining treatment plan</werkproces>
          <processtap>Establish treatment plan</processtap>
          <beschrijving>Determining and establishing a treatment plan (including applications for authorizations (from the insurer)).</beschrijving>
+         <io_out>Treatment plan</io_out>
+         <io_in/>
          <bedrijfsfuncties>TREATMENT PLANNING
 TREATMENT PLANNING
 </bedrijfsfuncties>
@@ -3164,6 +3333,11 @@ TREATMENT PLANNING
          <werkproces>Determining treatment plan</werkproces>
          <processtap>Inform patient</processtap>
          <beschrijving>In the context of Treatment Plan: Informing and advising on, for example, the nature, approach and risk of an examination, treatment (possibilities) or surgery that the patient undergoes.</beschrijving>
+         <io_out/>
+         <io_in>Patient file
+Diagnosis
+Treatment options
+Patient folder</io_in>
          <bedrijfsfuncties>DIAGNOSIS
 TREATMENT PLANNING
 TREATMENT PLANNING
@@ -3177,6 +3351,8 @@ TREATMENT PLANNING
          <werkproces>Determining treatment plan</werkproces>
          <processtap>Obtain informed consent</processtap>
          <beschrijving>Ask whether the patient agrees with the proposed treatment and/or participate in research and record his answer.</beschrijving>
+         <io_out>Informed Consent</io_out>
+         <io_in/>
          <bedrijfsfuncties>TREATMENT PLANNING
 TREATMENT PLANNING
 </bedrijfsfuncties>
@@ -3190,6 +3366,8 @@ TREATMENT PLANNING
          <processtap/>
          <beschrijving>pre-condition: treatment plan consists of activities that must be ordered
 post-condition: an order for the activity has been created</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1078</zira_id>
       </line>
@@ -3202,6 +3380,8 @@ post-condition: an order for the activity has been created</beschrijving>
          <beschrijving>Requesting interventions (procedures/treatments that you as a practitioner outsource to other specialisms or disciplines) are also part of this).
 
 Record which application is made, provide it with all necessary information and documents and validate it for completeness</beschrijving>
+         <io_out>Order</io_out>
+         <io_in/>
          <bedrijfsfuncties>TREATMENT PLANNING
 TREATMENT PLANNING
 </bedrijfsfuncties>
@@ -3214,6 +3394,8 @@ TREATMENT PLANNING
          <werkproces>Plan treatment activity</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1079</zira_id>
       </line>
@@ -3224,6 +3406,8 @@ TREATMENT PLANNING
          <werkproces>Plan treatment activity</werkproces>
          <processtap>Process request</processtap>
          <beschrijving>Receive an application and check it for completeness and correctness + feedback that the application has been received in good order</beschrijving>
+         <io_out>Order</io_out>
+         <io_in>Order</io_in>
          <bedrijfsfuncties>TREATMENT PLANNING
 ADDITIONAL RESEARCH
 </bedrijfsfuncties>
@@ -3236,6 +3420,9 @@ ADDITIONAL RESEARCH
          <werkproces>Plan treatment activity</werkproces>
          <processtap>Planning the location</processtap>
          <beschrijving>Determining and planning the desired use of spaces and rooms.</beschrijving>
+         <io_out>Location
+Appointment</io_out>
+         <io_in>Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -3249,6 +3436,9 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan treatment activity</werkproces>
          <processtap>Plan activity</processtap>
          <beschrijving>Planning the activity</beschrijving>
+         <io_out>Order</io_out>
+         <io_in>Schedule
+Order</io_in>
          <bedrijfsfuncties>TREATMENT PLANNING
 </bedrijfsfuncties>
          <zira_id>1248</zira_id>
@@ -3260,6 +3450,10 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan treatment activity</werkproces>
          <processtap>Plan resources</processtap>
          <beschrijving>Planning the desired deployment of resources such as equipment, instruments, blood products, food and beds.</beschrijving>
+         <io_out>Appointment
+Material</io_out>
+         <io_in>Schedule
+Treatment plan</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -3273,6 +3467,9 @@ REFERRALS &amp; TRANSFERS
          <werkproces>Plan treatment activity</werkproces>
          <processtap>Plan people</processtap>
          <beschrijving>Determining and planning the desired deployment of people.</beschrijving>
+         <io_out>Appointment
+Person</io_out>
+         <io_in>Schedule</io_in>
          <bedrijfsfuncties>ADDITIONAL RESEARCH
 TREATMENT PLANNING
 REFERRALS &amp; TRANSFERS
@@ -3289,6 +3486,8 @@ REFERRALS &amp; TRANSFERS
 This is specifically described in the pre-conditions.
 
 ""Treat"" is actually ""Execute treatment plan"""</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>854</zira_id>
       </line>
@@ -3301,6 +3500,8 @@ This is specifically described in the pre-conditions.
          <beschrijving>"Pre-condition: Treatment plan = including planned (treatment) activities
 Post-condition: Prepared treatment (location, resources, patient)"
 "Ensuring that the supplies are prepared, e.g. preparing medication for administration, ensuring that the correct nets are present in the OR, etc</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1080</zira_id>
       </line>
@@ -3315,6 +3516,9 @@ Post-condition: Prepared treatment (location, resources, patient)"
 Receiving/obtaining/collecting the necessary resources for treatment.
 
 Have all general preconditions for treatment been met?"</beschrijving>
+         <io_out>Material</io_out>
+         <io_in>Material
+Treatment plan</io_in>
          <bedrijfsfuncties>TREATMENT
 </bedrijfsfuncties>
          <zira_id>1105</zira_id>
@@ -3326,6 +3530,8 @@ Have all general preconditions for treatment been met?"</beschrijving>
          <werkproces>Prepare treatment</werkproces>
          <processtap>Preparing patient for treatment</processtap>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in>Treatment plan</io_in>
          <bedrijfsfuncties>TREATMENT
 </bedrijfsfuncties>
          <zira_id>1131</zira_id>
@@ -3337,6 +3543,9 @@ Have all general preconditions for treatment been met?"</beschrijving>
          <werkproces>Prepare treatment</werkproces>
          <processtap>Prepare treatment room</processtap>
          <beschrijving>Prepare the treatment room for the treatment that is planned.</beschrijving>
+         <io_out/>
+         <io_in>Location
+Treatment plan</io_in>
          <bedrijfsfuncties>TREATMENT
 </bedrijfsfuncties>
          <zira_id>1182</zira_id>
@@ -3350,6 +3559,8 @@ Have all general preconditions for treatment been met?"</beschrijving>
          <beschrijving>Pre-condition: Prepared (other) medical treatment
 
 Post-condition: Performed/completed (other) medical treatment"</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1081</zira_id>
       </line>
@@ -3360,6 +3571,8 @@ Post-condition: Performed/completed (other) medical treatment"</beschrijving>
          <werkproces>Carrying out (other) medical treatment</werkproces>
          <processtap>Finish treatment</processtap>
          <beschrijving>Completion of treatment (final check-up, stabilization, transfer to another care provider and cleaning up the treatment room).</beschrijving>
+         <io_out>Treatment report</io_out>
+         <io_in>Therapy</io_in>
          <bedrijfsfuncties>OTHER TREATMENTS
 TREATMENT
 </bedrijfsfuncties>
@@ -3372,6 +3585,8 @@ TREATMENT
          <werkproces>Carrying out (other) medical treatment</werkproces>
          <processtap>Carry out treatment</processtap>
          <beschrijving>Performing treatment including final check, stabilization)</beschrijving>
+         <io_out>Treatment report</io_out>
+         <io_in>Therapy</io_in>
          <bedrijfsfuncties>OTHER TREATMENTS
 TREATMENT
 </bedrijfsfuncties>
@@ -3385,6 +3600,8 @@ TREATMENT
          <processtap/>
          <beschrijving>Pre-condition: Prepared (planned) nursing care
 Post-condition: Nursing care performed.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1082</zira_id>
       </line>
@@ -3395,6 +3612,8 @@ Post-condition: Nursing care performed.</beschrijving>
          <werkproces>Carrying out nursing care</werkproces>
          <processtap>Determining nursing goal (outcome)</processtap>
          <beschrijving>Determining the nursing goal.</beschrijving>
+         <io_out>Nursing plan</io_out>
+         <io_in/>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3407,6 +3626,8 @@ TREATMENT
          <werkproces>Carrying out nursing care</werkproces>
          <processtap>Taking a nurse anamnesis</processtap>
          <beschrijving>Anamnesis/physical examination performed by a nurse. See also general history.</beschrijving>
+         <io_out>Nursing history</io_out>
+         <io_in>Nursing</io_in>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3419,6 +3640,8 @@ TREATMENT
          <werkproces>Carrying out nursing care</werkproces>
          <processtap>Determining Nursing Diagnosis</processtap>
          <beschrijving>The diagnosis is pertinent to nursing treatment.</beschrijving>
+         <io_out>Nurse Diagnosis</io_out>
+         <io_in/>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3431,6 +3654,8 @@ TREATMENT
          <werkproces>Carrying out nursing care</werkproces>
          <processtap>Evaluate nursing results</processtap>
          <beschrijving>Evaluating the nursing outcome.</beschrijving>
+         <io_out>Nurse Evaluation</io_out>
+         <io_in/>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3443,6 +3668,8 @@ TREATMENT
          <werkproces>Carrying out nursing care</werkproces>
          <processtap>Determining nursing plan</processtap>
          <beschrijving>Decide on a nursing plan and document it so that it can be used in communication with the patient and other caregivers.</beschrijving>
+         <io_out>Nursing plan</io_out>
+         <io_in>Nursing history</io_in>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3455,6 +3682,9 @@ TREATMENT
          <werkproces>Carrying out nursing care</werkproces>
          <processtap>Implementing a nursing plan</processtap>
          <beschrijving>undefined</beschrijving>
+         <io_out>Meassurement
+Medical Index Scores</io_out>
+         <io_in>Nursing plan</io_in>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3468,6 +3698,8 @@ TREATMENT
          <processtap/>
          <beschrijving>Pre-condition: Prepared (planned) care.
 Post-condition: Care performed.</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1083</zira_id>
       </line>
@@ -3478,6 +3710,8 @@ Post-condition: Care performed.</beschrijving>
          <werkproces>Perform care</werkproces>
          <processtap>Preparing care</processtap>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in>Care plan</io_in>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3490,6 +3724,9 @@ TREATMENT
          <werkproces>Perform care</werkproces>
          <processtap>Care plans</processtap>
          <beschrijving>Planning the execution of the care request.</beschrijving>
+         <io_out>Care
+Care plan</io_out>
+         <io_in>Care</io_in>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3502,6 +3739,8 @@ TREATMENT
          <werkproces>Perform care</werkproces>
          <processtap>Taking care of patient</processtap>
          <beschrijving>Includes personal care, feeding assistance, observation, reporting</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3514,6 +3753,9 @@ TREATMENT
          <werkproces>Perform care</werkproces>
          <processtap>Complete care request</processtap>
          <beschrijving>Notification that the care request has been</beschrijving>
+         <io_out>Care
+Care Report</io_out>
+         <io_in/>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3526,6 +3768,8 @@ TREATMENT
          <werkproces>Perform care</werkproces>
          <processtap>Processing care request</processtap>
          <beschrijving>undefined</beschrijving>
+         <io_out>Care</io_out>
+         <io_in>Care</io_in>
          <bedrijfsfuncties>NURSING
 TREATMENT
 </bedrijfsfuncties>
@@ -3539,6 +3783,8 @@ TREATMENT
          <processtap/>
          <beschrijving>Pre-conditie: Voorbereide (geplande) therapie
 Post-conditie: Uitgevoerde therapie</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1084</zira_id>
       </line>
@@ -3549,6 +3795,8 @@ Post-conditie: Uitgevoerde therapie</beschrijving>
          <werkproces>Conduct therapy</werkproces>
          <processtap>Conduct therapy</processtap>
          <beschrijving>Carrying out treatment by various therapeutic disciplines (that deal with the treatment or cure of diseases or the alleviation of symptoms) as part of the treatment plan, for example radiotherapy, physiotherapy, speech therapy.</beschrijving>
+         <io_out/>
+         <io_in>Therapy plan</io_in>
          <bedrijfsfuncties>THERAPY
 TREATMENT
 </bedrijfsfuncties>
@@ -3561,6 +3809,8 @@ TREATMENT
          <werkproces>Conduct therapy</werkproces>
          <processtap>Evaluate therapy</processtap>
          <beschrijving>Evaluating the outcome of the therapy.</beschrijving>
+         <io_out>Therapy report</io_out>
+         <io_in/>
          <bedrijfsfuncties>THERAPY
 TREATMENT
 </bedrijfsfuncties>
@@ -3573,6 +3823,8 @@ TREATMENT
          <werkproces>Conduct therapy</werkproces>
          <processtap>Determining therapy goal</processtap>
          <beschrijving>The aim of the therapy agreed with the patient.</beschrijving>
+         <io_out>Therapy plan</io_out>
+         <io_in>Therapeutic Diagnosis</io_in>
          <bedrijfsfuncties>THERAPY
 TREATMENT
 </bedrijfsfuncties>
@@ -3585,6 +3837,8 @@ TREATMENT
          <werkproces>Conduct therapy</werkproces>
          <processtap>Determining therapeutic diagnosis</processtap>
          <beschrijving>The diagnosis according to the therapist.</beschrijving>
+         <io_out>Therapeutic Diagnosis</io_out>
+         <io_in/>
          <bedrijfsfuncties>THERAPY
 TREATMENT
 </bedrijfsfuncties>
@@ -3597,6 +3851,8 @@ TREATMENT
          <werkproces>Conduct therapy</werkproces>
          <processtap>Decrease therapeutic history</processtap>
          <beschrijving>Taking a history appropriate for a particular therapy.</beschrijving>
+         <io_out>Therapeutic History</io_out>
+         <io_in>Therapy</io_in>
          <bedrijfsfuncties>THERAPY
 TREATMENT
 </bedrijfsfuncties>
@@ -3609,6 +3865,8 @@ TREATMENT
          <werkproces>Conduct therapy</werkproces>
          <processtap>Determine therapy plan</processtap>
          <beschrijving>Decide on a nursing plan and document it so that it can be used in communication with the patient and other caregivers.</beschrijving>
+         <io_out>Therapy plan</io_out>
+         <io_in/>
          <bedrijfsfuncties>THERAPY
 TREATMENT
 </bedrijfsfuncties>
@@ -3621,6 +3879,8 @@ TREATMENT
          <werkproces>Perform operative treatment</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1085</zira_id>
       </line>
@@ -3631,6 +3891,8 @@ TREATMENT
          <werkproces>Perform operative treatment</werkproces>
          <processtap>Prepare surgery</processtap>
          <beschrijving>Taking care of logistical preparation (including ordering blood products, prostheses, etc.) and preparing necessary materials prior to surgery.</beschrijving>
+         <io_out>Operation</io_out>
+         <io_in>Preoperative Screening Report</io_in>
          <bedrijfsfuncties>SURGERY
 TREATMENT
 </bedrijfsfuncties>
@@ -3643,6 +3905,10 @@ TREATMENT
          <werkproces>Perform operative treatment</werkproces>
          <processtap>Perform operation</processtap>
          <beschrijving>Performing an intervention in a hospital operating room that involves incision, excision, manipulation, or suturing of tissue, and typically requires regional or general anesthesia or sedation to manage pain.</beschrijving>
+         <io_out>Operation
+Complication</io_out>
+         <io_in>Operation
+Preoperative Screening Report</io_in>
          <bedrijfsfuncties>SURGERY
 TREATMENT
 </bedrijfsfuncties>
@@ -3655,6 +3921,9 @@ TREATMENT
          <werkproces>Perform operative treatment</werkproces>
          <processtap>Prepare operation report</processtap>
          <beschrijving>Prepare a report on the progress of the operation. Usually both the surgeon and the anesthetist report.</beschrijving>
+         <io_out>Operation report
+Anesthesia report</io_out>
+         <io_in>Operation</io_in>
          <bedrijfsfuncties>SURGERY
 TREATMENT
 </bedrijfsfuncties>
@@ -3667,6 +3936,8 @@ TREATMENT
          <werkproces>Perform operative treatment</werkproces>
          <processtap>Perform preoperative screening</processtap>
          <beschrijving>Obtaining information about the patient's condition through examination/questionnaires/conversation, weighing the necessity and risks of the planned operation and determining the desired approach and method of anaesthesia.</beschrijving>
+         <io_out>Preoperative Screening Report</io_out>
+         <io_in>Operation</io_in>
          <bedrijfsfuncties>SURGERY
 TREATMENT
 </bedrijfsfuncties>
@@ -3679,6 +3950,8 @@ TREATMENT
          <werkproces>Carrying out drug therapy</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1086</zira_id>
       </line>
@@ -3690,6 +3963,12 @@ TREATMENT
          <processtap>Prescribing medication</processtap>
          <beschrijving>Determining required medication, dosage and frequency of dosing.
 In the outpatient situation, a request for dispensing is made to the pharmacy. This includes medication verification and checking for contraindications.</beschrijving>
+         <io_out>Medication agreement
+Provision request
+Medication use</io_out>
+         <io_in>Current medication overview
+Patient file
+Contraindication</io_in>
          <bedrijfsfuncties>MEDICATION
 TREATMENT
 </bedrijfsfuncties>
@@ -3702,6 +3981,8 @@ TREATMENT
          <werkproces>Carrying out drug therapy</werkproces>
          <processtap>Prepare medication</processtap>
          <beschrijving>The full or partial manufacture of medicines or the packaging or labeling thereof (source: Medicines Act).</beschrijving>
+         <io_out/>
+         <io_in>Administration agreement</io_in>
          <bedrijfsfuncties>MEDICATION
 TREATMENT
 </bedrijfsfuncties>
@@ -3715,6 +3996,10 @@ TREATMENT
          <processtap>Delivery of medication</processtap>
          <beschrijving>Dispensing by a pharmacy of a specific drug to a person.
 Dispensing is the supply of a quantity of a medicinal product to the patient, his administering party or his representative.</beschrijving>
+         <io_out>Administration agreement</io_out>
+         <io_in>Patient file
+Medication agreement
+Provision request</io_in>
          <bedrijfsfuncties>MEDICATION
 TREATMENT
 </bedrijfsfuncties>
@@ -3727,6 +4012,11 @@ TREATMENT
          <werkproces>Carrying out drug therapy</werkproces>
          <processtap>Administer/use medication</processtap>
          <beschrijving>Providing and/or introducing medication to be taken at a specific time, according to agreement and route of administration (oral, injection, anal, etc.). May also concern the administration of nutrition via an IV or tube and the use of medication under your own management.</beschrijving>
+         <io_out>Medication Administration
+Medication use</io_out>
+         <io_in>Medication agreement
+Administration agreement
+Medication delivery</io_in>
          <bedrijfsfuncties>MEDICATION
 TREATMENT
 </bedrijfsfuncties>
@@ -3740,6 +4030,8 @@ TREATMENT
          <processtap>Afleveren medicatie</processtap>
          <beschrijving>Afgifte door een apotheek van een specifiek medicijn aan een persoon.
 Een verstrekking is de terhandstelling van een hoeveelheid van een geneesmiddel aan de patiënt, zijn toediener of zijn vertegenwoordiger.</beschrijving>
+         <io_out>Medication delivery</io_out>
+         <io_in/>
          <bedrijfsfuncties>MEDICATION
 TREATMENT
 </bedrijfsfuncties>
@@ -3752,6 +4044,13 @@ TREATMENT
          <werkproces>Carrying out drug therapy</werkproces>
          <processtap>Monitor medication</processtap>
          <beschrijving>Supervise and control the correct use of medication (eg, correct dosage, risk of allergy, side effects, combination with pregnancy, interaction with other medication) in light of the patient's overall clinical picture. (Rational: each process step already does part of the monitoring, but this is also necessary in the overall context).</beschrijving>
+         <io_out/>
+         <io_in>Patient file
+Medication agreement
+Medication Administration
+Administration agreement
+Medication delivery
+Medication use</io_in>
          <bedrijfsfuncties>MEDICATION
 TREATMENT
 </bedrijfsfuncties>
@@ -3765,6 +4064,8 @@ TREATMENT
          <processtap/>
          <beschrijving>Pre-condition: Performed Treatment
 Post-condition: Evaluated Treatment</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1087</zira_id>
       </line>
@@ -3775,6 +4076,9 @@ Post-condition: Evaluated Treatment</beschrijving>
          <werkproces>Evaluate treatment</werkproces>
          <processtap>Check treatment</processtap>
          <beschrijving>Checking the treatment on the results achieved.</beschrijving>
+         <io_out/>
+         <io_in>Patient file
+Therapy</io_in>
          <bedrijfsfuncties>TREATMENT
 </bedrijfsfuncties>
          <zira_id>1128</zira_id>
@@ -3786,6 +4090,8 @@ Post-condition: Evaluated Treatment</beschrijving>
          <werkproces>Evaluate treatment</werkproces>
          <processtap>Evaluate care</processtap>
          <beschrijving>Evaluation of the care provided (the result of all treatments)</beschrijving>
+         <io_out>Evaluation report</io_out>
+         <io_in/>
          <bedrijfsfuncties>TREATMENT
 </bedrijfsfuncties>
          <zira_id>1243</zira_id>
@@ -3797,6 +4103,8 @@ Post-condition: Evaluated Treatment</beschrijving>
          <werkproces/>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>855</zira_id>
       </line>
@@ -3807,6 +4115,8 @@ Post-condition: Evaluated Treatment</beschrijving>
          <werkproces>Determining transfer policy</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1088</zira_id>
       </line>
@@ -3817,6 +4127,10 @@ Post-condition: Evaluated Treatment</beschrijving>
          <werkproces>Determining transfer policy</werkproces>
          <processtap>Refer patient</processtap>
          <beschrijving>Sending a request (both digital and paper) from a patient/care provider to engage a healthcare provider within the (other) institution.</beschrijving>
+         <io_out>Healthcare provider
+Healthcare Professional
+Referral request</io_out>
+         <io_in>Transfer policy</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1103</zira_id>
@@ -3833,6 +4147,9 @@ Evaluate care by consulting the Patient Record.
 Determining the activities and the necessary information provision for the transfer or transfer of the patient to the other institution.
 
 Also determine what is possible. e.g. if a referral is made to a nursing home, it must have space and transport must be available. By transfer nurse.</beschrijving>
+         <io_out>Transfer policy</io_out>
+         <io_in>Referral order
+Patient file</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1470</zira_id>
@@ -3844,6 +4161,8 @@ Also determine what is possible. e.g. if a referral is made to a nursing home, i
          <werkproces>Transfer patient</werkproces>
          <processtap/>
          <beschrijving>undefined</beschrijving>
+         <io_out/>
+         <io_in/>
          <bedrijfsfuncties/>
          <zira_id>1089</zira_id>
       </line>
@@ -3858,6 +4177,9 @@ Also determine what is possible. e.g. if a referral is made to a nursing home, i
 Referring: Sending a request (both digital and paper) from a patient/care provider to engage a healthcare provider within the (other) institution.
 
 Referring is specialization of transferring.</beschrijving>
+         <io_out>Transfer information</io_out>
+         <io_in>Transfer policy
+Referral order</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1113</zira_id>
@@ -3873,6 +4195,8 @@ Referring is specialization of transferring.</beschrijving>
 Exchange can also be made available and e.g. via notification.
 Report is as it is now, but could also be made available, e.g. via XDS / MedEx physician portal.
 See also "IO Exchange Information".</beschrijving>
+         <io_out/>
+         <io_in>Exchange information</io_in>
          <bedrijfsfuncties>REFERRALS &amp; TRANSFERS
 </bedrijfsfuncties>
          <zira_id>1167</zira_id>
