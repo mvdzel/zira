@@ -1,2 +1,0 @@
-tocTab[tocTab.length] = new Array("0.1.1", "1", "ZIRA Metamodel", "EARoot/EA1/EA1/EA29.html", "4.png", "", "", "{912AEF65-CA5A-4f7e-884D-75B79FFC33C4}", "Package");
-tocTab[tocTab.length] = new Array("0.1.2", "1", "RDZ Metamodel", "EARoot/EA1/EA2/EA82.html", "4.png", "", "", "{BD9BC2F1-9BC6-408c-BC79-B3D09DF23BDF}", "Package");
