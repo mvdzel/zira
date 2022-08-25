@@ -7,6 +7,10 @@
 	<!--
 		Maak MAX Export van de Content Package!
 
+		[18-aug-2022]
+		Added tag sortkey for processtap in functions and proces tabs for proper sorting
+		N.B. xslt is case sensitive and sortkey is all small letters for BA and for domains camel cased 
+
 		[1-mar-2022]
 		io_out en io_in toegevoegd voor proces
 
@@ -79,6 +83,7 @@
 					<bedrijfsfunctie>Bedrijfsfunctie</bedrijfsfunctie>
 					<processtap>Processtap = Bedrijfsactiviteit</processtap>
 					<beschrijving>Beschrijving</beschrijving>
+					<sort_key>sort_key</sort_key>
 					<zira_id>ZiRA id</zira_id>
 				</line> -->
 				<xsl:for-each select="/max:model/objects/object[stereotype='ArchiMate_BusinessFunction']">
@@ -87,20 +92,33 @@
 					<line>
 						<type>BF</type>
 						<bedrijfsfunctie><xsl:value-of select="$bedrijfsfunctie"/></bedrijfsfunctie>
-						<processtap></processtap>
+						<processtap/>
 						<beschrijving><xsl:value-of select="substring-before(substring-after(notes,'&lt;en-US&gt;'),'&lt;/en-US&gt;')"/></beschrijving>
+						<sort_key/>
 						<zira_id><xsl:value-of select="$bf_id"/></zira_id>
 					</line>
 					
 					<xsl:for-each select="/max:model/relationships/relationship[destId=$bf_id and stereotype='ArchiMate_Aggregation']">
 						<xsl:variable name="sourceId" select="sourceId"/>
 						<xsl:variable name="obj" select="/max:model/objects/object[id=$sourceId]"/>
+
+						<xsl:variable name="bawpagg" select="/max:model/relationships/relationship[sourceId=$sourceId and stereotype='ArchiMate_Aggregation']"/>
+						<!-- find relationship Aggregation with BA as sourceId, that one has the sortkey of the BA in the WP -->
+						<xsl:variable name="sort_key" select="$bawpagg/tag[@name='sortkey']/@value"/>
+<!--MZ-->
+						<!-- find relationship Aggregation with destId (is WP) as sourceId that one has the sortkey of the WP in the BP -->
+						<xsl:variable name="wpid" select="$bawpagg/destId"/>
+						<xsl:variable name="wpbpagg" select="/max:model/relationships/relationship[sourceId=$wpid and stereotype='ArchiMate_Aggregation']"/>
+						<xsl:variable name="sort_key_wp" select="$wpbpagg/tag[@name='sortkey']/@value"/>
+<!--MZ-->
+
 						<xsl:if test="$obj/parentId=372">
 							<line>
 								<type>BA</type>
 								<bedrijfsfunctie><xsl:value-of select="$bedrijfsfunctie"/></bedrijfsfunctie>
 								<processtap><xsl:value-of select="$obj/alias"/></processtap>
 								<beschrijving><xsl:value-of select="substring-before(substring-after($obj/notes,'&lt;en-US&gt;'),'&lt;/en-US&gt;')"/></beschrijving>
+								<sort_key><xsl:value-of select="$sort_key_wp"/>.<xsl:value-of select="$sort_key"/></sort_key>
 								<zira_id><xsl:value-of select="$obj/id"/></zira_id>
 							</line>
 						</xsl:if>
@@ -119,6 +137,7 @@
 					<io_in/>
 					<io_out/>
 					<bedrijfsfuncties>Bedrijfsfuncties</bedrijfsfuncties>
+					<sort_key/>
 					<zira_id>ZiRA id</zira_id>
 				</line> -->
 				<xsl:for-each select="objects/object[stereotype='ArchiMate_BusinessService']">
@@ -137,6 +156,7 @@
 						<io_in/>
 						<io_out/>
 						<bedrijfsfuncties/>
+						<sort_key/>
 						<zira_id><xsl:value-of select="$bpid"/></zira_id>
 					</line>
 					<!-- should be stereotype='ArchiMate_Aggregation' instead of type='Aggregation' -->
@@ -153,11 +173,13 @@
 							<io_in/>
 							<io_out/>
 							<bedrijfsfuncties/>
+							<sort_key/>
 							<zira_id><xsl:value-of select="$wpid"/></zira_id>
 						</line>
 						<!-- should be stereotype='ArchiMate_Aggregation' instead of type='Aggregation' -->
 						<xsl:for-each select="/max:model/relationships/relationship[destId=$wpid and type='Aggregation']">
 							<xsl:variable name="baid" select="sourceId"/>
+							<xsl:variable name="basort_key" select="tag[@name='sortkey']/@value"/>
 							<xsl:variable name="ba" select="/max:model/objects/object[id=$baid]"/>
 							<xsl:variable name="domeinid" select="/max:model/relationships/relationship[sourceId=$baid and stereotype='ArchiMate_Aggregation' and starts-with(destId,'2.16.840.1.113883.2.4.3.11.29.2.')]/destId"/>
 
@@ -176,6 +198,7 @@
 								<io_in><xsl:value-of select="string-join($baIOs_in,$nl)"/></io_in>
 								<io_out><xsl:value-of select="string-join($baIOs_out,$nl)"/></io_out>
 								<bedrijfsfuncties><xsl:call-template name="bf-ba"><xsl:with-param name="baid" select="$baid"/></xsl:call-template></bedrijfsfuncties>
+								<sort_key><xsl:value-of select="$basort_key"/></sort_key>
 								<zira_id><xsl:value-of select="$baid"/></zira_id>
 							</line>
 						</xsl:for-each>
