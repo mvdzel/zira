@@ -35,6 +35,8 @@ English names lookup table from fods export of zira spreadsheet with english col
 -----------------
 xslt/zira2xls:
 
+N.B. artifacts/zira-1.0-elements-nl+en.max is the latest version with SortOrder!
+
 > java -jar /home/michael/Develop/saxon9he.jar -s:artifacts/zira-1.0-nl+en.max -xsl:xslt/zira2xls/zira2sheet-5-nl.xslt -o:artifacts/zira-1.0-nl.xml
 > java -jar /home/michael/Develop/saxon9he.jar -s:artifacts/zira-1.0-nl+en.max -xsl:xslt/zira2xls/zira2sheet-5-en.xslt -o:artifacts/zira-1.0-en.xml
 .. then import the xml file using LibreOffice "XML Source" and map each type/line to the top/left column of a sheet  
