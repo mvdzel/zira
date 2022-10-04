@@ -1,3 +1,4 @@
+**MOVED PERMANENTLY TO https://github.com/Nictiz/ZiRA/**
 
 docs/ Generated HTML from the Enterprise Architect project
 
