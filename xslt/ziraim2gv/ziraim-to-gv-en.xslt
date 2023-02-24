@@ -6,8 +6,6 @@
 	<xsl:strip-space elements="*" />
 	<xsl:variable name="dq">"</xsl:variable>
 
-	<xsl:variable name="lookup_table" select='document("english.xml")//lookup/entry'/>
-
 	<xsl:template match="max:model">
 digraph{
 layout=twopi;
@@ -30,7 +28,7 @@ overlap=false;
 			<xsl:variable name="gvid" select="concat('&quot;',$id,'&quot;')"/>
 			<xsl:variable name="tooltip" select="concat(replace(replace(notes, $dq,''), '&#10;', '&amp;#10;'),' ')"/>
 			<xsl:variable name="name" select="name"/>
-			<xsl:variable name="name_en" select="$lookup_table[@zira_id = $id]/@english"/>
+			<xsl:variable name="name_en" select="alias"/>
 			<xsl:choose>
 				<xsl:when test="$id='2171' or $id='1811' or
 					exists(//relationships/relationship[sourceId=$id and destId='1811' and type='Generalization']) or
@@ -64,9 +62,9 @@ overlap=false;
 				<xsl:when test="type='Aggregation'">
 	<xsl:value-of select="$gvSourceId"/>-&gt;<xsl:value-of select="$gvDestId"/> [arrowhead=odiamond color=green];
 				</xsl:when>
-				<xsl:otherwise>
+				<!--<xsl:otherwise>
 	<xsl:value-of select="$gvSourceId"/>-&gt;<xsl:value-of select="$gvDestId"/> [arrowhead=vee color=lightgray label="<xsl:value-of select="label"/>"];
-				</xsl:otherwise>
+				</xsl:otherwise>-->
 			</xsl:choose>
 		</xsl:if>
 	</xsl:template>

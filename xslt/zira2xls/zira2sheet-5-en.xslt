@@ -112,7 +112,7 @@
 						<xsl:variable name="sort_key_wp" select="$wpbpagg/tag[@name='sortkey']/@value"/>
 <!--MZ-->
 
-						<xsl:if test="$obj/parentId=372">
+						<xsl:if test="$obj/parentId=372"> <!-- Only elements in BA package are BA -->
 							<line>
 								<type>BA</type>
 								<bedrijfsfunctie><xsl:value-of select="$bedrijfsfunctie"/></bedrijfsfunctie>

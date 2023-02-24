@@ -1,4 +1,6 @@
 
+* MOVED PERMANENTLY TO github.com/Nictiz/ZiRA *
+
 docs/ Generated HTML from the Enterprise Architect project
 
 artifacts/ Different generated versions of the ZiRA model (master source is the ZiRA Enterprise Architect Project): XLSX, MAX, XML, ArchMate
@@ -16,15 +18,16 @@ scripts/zira2xml.js
 ===============
 xslt/ziraim2gv:
 
+Export "Informatiemodel ZORG Resultaten.max" by MAX Export in EA of the Diagram "Informatiemodel ZORG Resultaten".
+Export "Informatiemodel ZORG Activiteiten.max" by MAX Export in EA of the Diagram "Informatiemodel ZORG Activiteiten".
+
 > java -jar /home/michael/Develop/saxon9he.jar -s:Informatiemodel\ ZORG\ Resultaten.max -xsl:ziraim-to-gv.xslt -o:Informatiemodel\ ZORG\ Resultaten.gv
 > dot "Informatiemodel ZORG Resultaten.gv" -Tpng > Informatiemodel\ ZORG\ Resultaten.png
 
 ----------------
 xslt/ziraim2gv: OpenGroup ENGLISH
 
-N.B. zira.fods is "ZiRA v1.0 Spreadsheet+Matrix July 11 2021+EN.xlsx" converted to Open Office Sheets.
-
-English names lookup table from fods export of zira spreadsheet with english column.
+(OBSOLETE) English names lookup table from fods export of zira spreadsheet with english column. N.B. zira.fods is "ZiRA v1.0 Spreadsheet+Matrix July 11 2021+EN.xlsx" converted to Open Office Sheets.
 > java -jar /home/michael/Develop/saxon9he.jar -s:/tmp/zira.fods -xsl:english.xslt -o:english.xml 
 
 > java -jar /home/michael/Develop/saxon9he.jar -s:Informatiemodel\ ZORG\ Resultaten.max -xsl:ziraim-to-gv-en.xslt -o:Informatiemodel\ ZORG\ Resultaten-en.gv
@@ -35,7 +38,7 @@ English names lookup table from fods export of zira spreadsheet with english col
 -----------------
 xslt/zira2xls:
 
-N.B. artifacts/zira-1.0-elements-nl+en.max is the latest version with SortOrder!
+N.B. artifacts/zira-1.0-elements-nl+en.max is the latest version with Sortkey!
 
 > java -jar /home/michael/Develop/saxon9he.jar -s:artifacts/zira-1.0-nl+en.max -xsl:xslt/zira2xls/zira2sheet-5-nl.xslt -o:artifacts/zira-1.0-nl.xml
 > java -jar /home/michael/Develop/saxon9he.jar -s:artifacts/zira-1.0-nl+en.max -xsl:xslt/zira2xls/zira2sheet-5-en.xslt -o:artifacts/zira-1.0-en.xml
