@@ -1,3 +1,4 @@
+**MOVED PERMANENTLY TO https://github.com/Nictiz/ZiRA/**
 
 * MOVED PERMANENTLY TO github.com/Nictiz/ZiRA *
 
